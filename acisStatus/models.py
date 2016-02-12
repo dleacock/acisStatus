@@ -9,9 +9,5 @@ class Beamline(models.Model):
 	locked = models.BooleanField(default=False)
 	updated_date = models.DateTimeField(blank=True, null=True)
 
-	def publish(self):
-		self.updated_date = timezone.now()
-		self.save()
-
 	def __str__(self):
 		return self.name

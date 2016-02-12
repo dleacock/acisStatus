@@ -4,6 +4,6 @@ from .models import Beamline
 
 
 def beamline_status(request):
-	beamlines = Beamline.objects.filter(updated_date__lte=timezone.now()).order_by('updated_date')
+	beamlines = Beamline.objects.order_by('name')
 	return render(request, 'acisStatus/status.html', 
 		{'beamlines': beamlines})
