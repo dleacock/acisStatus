@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def beamline_status(request):
+	return render(request, 'acisStatus/status.html', {})
