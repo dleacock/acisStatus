@@ -1,16 +1,32 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<title>ACIS Panel Status</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/acisStatus.css' %}">
+		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<div>
-			<h1>ACIS Panel Status</h1>
-		</div>
-
-		{% for beamline in beamlines %}
-			<div>
-				{ beamline.name }
-			</div>
-		{% endfor %}
+		<center>
+			<div class="title"><h1>ACIS Panel Status</h1></div>
+			<table style="width:75%">
+				<tr>
+				<th>Beamline</th>
+				<th>Locked Status</th>
+				<th>Notes</th>
+				</tr>
+			{% for beamline in beamlines %}
+			<tr>
+		    <td>{{ beamline.name }}</td>
+			    <td>{% if beamline.locked %}<span class="glyphicon glyphicon-remove-sign"></span>
+						{% else %}<span class="glyphicon glyphicon-ok-sign"></span>
+					{% endif %}
+				</td>
+			    <td>{{ beamline.notes }}</td> 
+			    </tr>
+			{% endfor %}	
+			</table>
+		</center>	
 	</body>
 </html>
