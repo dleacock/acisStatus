@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.templates import RequestContext
 from django.shortcuts import render_to_response
 from .models import Beamline
 
