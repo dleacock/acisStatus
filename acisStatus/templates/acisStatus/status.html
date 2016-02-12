@@ -7,5 +7,10 @@
 			<h1>ACIS Panel Status</h1>
 		</div>
 
+		{% beamline in beamlines %}
+			<div>
+				{ beamline.name }
+			</div>
+		{% endfor %}
 	</body>
 </html>
