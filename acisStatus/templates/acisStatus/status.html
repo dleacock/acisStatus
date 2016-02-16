@@ -2,16 +2,17 @@
 <html>
 	<head>
 		<title>ACIS Panel Status</title>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="{% static 'css/acisStatus.css' %}">
+		<link rel="stylesheet" href="{% static 'css/acisStatus.css' %}"> 
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	</head>
 	<body>
 		<center>
+
 			<div class="title"><h1>ACIS Panel Status</h1></div>
 			<div class="table">
-				<table style="width:75%" border="1">
+				<table class"table table-condensed">  
 					<tr>
 					<th>Beamline</th>
 					<th>Locked Status</th>
@@ -21,8 +22,8 @@
 				<tr>
 			    <td>{{ beamline.name }}</td>
 				    <td>
-				    	{% if beamline.locked %}<span class="glyphicon glyphicon-remove-sign" style="color:red"></span>
-							{% else %}<span class="glyphicon glyphicon-ok-sign" style="color:green"></span>
+				    	{% if beamline.locked %}<i class="fa fa-check-circle-o"></i>
+							{% else %}<i class="fa fa-minus-circle"></i>
 						{% endif %}
 					</td>
 				    <td>{{ beamline.notes }}</td> 
