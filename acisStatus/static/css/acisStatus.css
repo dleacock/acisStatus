@@ -6,6 +6,13 @@
 	padding-bottom: 25px;
 	text-align: center;
 }
-table{
-	margin-left: 7cm;
+.table td{
+	text-align: center;
+	font-size: 150%;
+}
+
+.table th{
+	font-size: 200%;
+	text-align: center;
+	
 }

@@ -10,23 +10,26 @@
 	<body>
 		<center>
 			<div class="title"><h1>ACIS Panel Status</h1></div>
-			<table style="width:75%">
+			<div class="table">
+				<table style="width:75%" border="1">
+					<tr>
+					<th>Beamline</th>
+					<th>Locked Status</th>
+					<th>Notes</th>
+					</tr>
+				{% for beamline in beamlines %}
 				<tr>
-				<th>Beamline</th>
-				<th>Locked Status</th>
-				<th>Notes</th>
-				</tr>
-			{% for beamline in beamlines %}
-			<tr>
-		    <td>{{ beamline.name }}</td>
-			    <td>{% if beamline.locked %}<span class="glyphicon glyphicon-remove-sign"></span>
-						{% else %}<span class="glyphicon glyphicon-ok-sign"></span>
-					{% endif %}
-				</td>
-			    <td>{{ beamline.notes }}</td> 
-			    </tr>
-			{% endfor %}	
-			</table>
+			    <td>{{ beamline.name }}</td>
+				    <td>
+				    	{% if beamline.locked %}<span class="glyphicon glyphicon-remove-sign" style="color:red"></span>
+							{% else %}<span class="glyphicon glyphicon-ok-sign" style="color:green"></span>
+						{% endif %}
+					</td>
+				    <td>{{ beamline.notes }}</td> 
+				    </tr>
+				{% endfor %}	
+				</table>
+			</div>
 		</center>	
 	</body>
 </html>
