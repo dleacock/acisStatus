@@ -8,6 +8,7 @@ class Beamline(models.Model):
 	notes = models.CharField(max_length=250, blank=True)
 	locked = models.BooleanField(default=False)
 	updated_date = models.DateTimeField(blank=True, null=True)
+	storage_ring_order = models.IntegerField(default=1)
 
 	def __str__(self):
 		return self.name
